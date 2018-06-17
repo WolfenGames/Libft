@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	l = size - i;
 	if (!l)
-		return (i + ft_strlen((char *)src));
+		return (i + ft_strlen(src));
 	while (*src)
 	{
 		if (l != 1)

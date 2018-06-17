@@ -23,9 +23,7 @@ t_list	*ft_lstnew(const void *content, size_t content_size)
 	{
 		ret->content = malloc(content_size);
 		if (ret->content)
-			while (++i < content_size + 1)
-				((unsigned char *)ret->content)[i - 1] =
-					((unsigned char *)content)[i - 1];
+			ft_memmove(ret->content, content, content_size);
 		ret->content_size = content_size;
 	}
 	else
