@@ -37,7 +37,7 @@ C = gcc
 
 %.o:	%.c
 	@echo "\033[1;36;m[Compiling $<]\t\t\t\033[0m: " | tr -d '\n'
-	$(C) -c $< -I.
+	$(C) $(CFLAGS) -c $< -I.
 
 $(NAME): $(OBJECTS)
 	@echo "\033[1;35;m[Linking] 033[0m: " | tr -d '\n'
