@@ -6,7 +6,7 @@
 /*   By: jwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/08 15:44:03 by jwolf             #+#    #+#             */
-/*   Updated: 2018/06/04 12:01:58 by jwolf            ###   ########.fr       */
+/*   Updated: 2018/06/17 23:16:03 by jwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void				ft_putendl_c(char const *s1, char const *s2);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
-void				ft_putstr(char *str);
+void				ft_putstr(const char *str);
 void				ft_putstr_fd(const char *s, int fd);
 void				ft_printbits(unsigned char octect);
 void				ft_printmemory(void *add, size_t size);
