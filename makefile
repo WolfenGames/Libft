@@ -39,7 +39,7 @@ C = gcc
 	$(C) -c $< -I.
 
 $(NAME): $(OBJECTS)
-	@echo "\033[1;35;m[Linking] \t\t\033[0m: " | tr -d '\n'
+	@echo "\033[1;35;m[Linking] 033[0m: " | tr -d '\n'
 	ar r $(NAME) $(OBJECTS)
 	@echo "\033[1;32;m[Success] \t\t\t\033[0m" 
 	ranlib $(NAME)
