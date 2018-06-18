@@ -23,7 +23,8 @@ char		**ft_strsplit(const char *s, char c)
 	end = 0;
 	i = 0;
 	MALLCHECK_N((s || c));
-	MALLCHECK_N((ret = ft_memalloc(sizeof(ret) * ft_wordcount(s, c) + 1)));
+	if (!(ret = (char **)ft_memalloc(sizeof(ret) * ft_wordcount(s, c) + 1)))
+		return (NULL);
 	while (ft_wordcount(s, c) - i)
 	{
 		while (s && *(s + start) && *(s + start) == c)

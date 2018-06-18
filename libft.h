@@ -6,7 +6,7 @@
 /*   By: jwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/08 15:44:03 by jwolf             #+#    #+#             */
-/*   Updated: 2018/06/17 23:16:03 by jwolf            ###   ########.fr       */
+/*   Updated: 2018/06/18 09:42:36 by jwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define STRCHECK(str)	if (!str) return (NULL)
 # define EVEN(x)		(!(x % 2))
 # define IS_SPACE(x)    (x == ' ' || x == '\t' || x== '\n')
-# define ABS(x)			((x < 0) ? x : -x)
+# define ABS(x)			((x < 0) ? (-x) : x)
 
 # include <string.h>
 # include <unistd.h>
@@ -49,9 +49,11 @@ void				ft_memdel(void **ap);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);
-void				ft_putendl_i(char const *s, int i);
-void				ft_putendl_c(char const *s1, char const *s2);
+void				ft_putendl_c(char const *dest, char const *src);
+void				ft_putendl_i(char const *s, int a);
 void				ft_putendl_fd(char const *s, int fd);
+void				ft_putendl_c_fd(char const *dest, const char *src, int fd);
+void				ft_putendl_i_fd(char const *s, int a, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr(const char *str);
@@ -108,8 +110,6 @@ char				*ft_strrchr(const char *str, int c);
 char				*ft_strstr(const char *hay, const char *needle);
 char				*ft_strsub(const char *s1, unsigned int start, size_t len);
 char				*ft_strtrim(const char *s);
-
-unsigned char		ft_swap_bits(unsigned char octet);
 
 char				**ft_strsplit(const char *s, char c);
 

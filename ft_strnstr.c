@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t n)
 	while (hay[i] != '\0' && i < n)
 	{
 		j = 0;
-		while (hay[i + j] && i + j < n && needle[i] && hay[i + j] == needle[j])
+		while (needle[j] && hay[i + j] && i + j < n && hay[i + j] == needle[j])
 			j++;
 		if (needle[j] == '\0')
 			return ((char *)(hay + i));

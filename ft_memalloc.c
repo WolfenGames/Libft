@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*mem;
 
-	MALLCHECK_N((mem = malloc(size)));
+	MALLCHECK_N((mem = (void *)malloc(size)));
 	ft_memset(mem, 0, size);
 	return (mem);
 }

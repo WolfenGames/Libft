@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/17 23:14:39 by jwolf             #+#    #+#             */
-/*   Updated: 2018/06/17 23:14:41 by jwolf            ###   ########.fr       */
+/*   Created: 2018/06/07 17:06:07 by jwolf             #+#    #+#             */
+/*   Updated: 2018/06/11 09:20:03 by jwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_i(const char *s, int i)
+void	ft_putendl_i(char const *str, int a)
 {
-    ft_putstr(s);
-    ft_putnbr(i);
-    ft_putchar('\n');
+	ft_putendl(ft_strjoin(str, ft_itoa(a)));
 }

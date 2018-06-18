@@ -13,7 +13,8 @@
 int		ft_clearspace(const char *s, int c)
 {
 	if (c == 0)
-		while (s[c] == ' ' || s[c] == '\t' || c[s] == '\n')
+		while (s[c] == ' ' || s[c] == '\t' || c[s] == '\n' || c[s] == '\r'
+					|| c[s] == '\v')
 			c++;
 	else
 		while (s[c] == ' ' || s[c] == '\t' || s[c] == '\n' || s[c] == '\0')

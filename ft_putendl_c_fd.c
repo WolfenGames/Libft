@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_c_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/08 16:25:54 by jwolf             #+#    #+#             */
-/*   Updated: 2018/06/04 10:37:02 by jwolf            ###   ########.fr       */
+/*   Created: 2018/06/08 07:14:50 by jwolf             #+#    #+#             */
+/*   Updated: 2018/06/11 09:20:15 by jwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+void	ft_putendl_c_fd(char const *dest, char const *str, int fd)
 {
-	unsigned char	*ret;
-	size_t			i;
-
-	i = 0;
-	ret = (unsigned char *)str;
-	while (i < n)
-	{
-		if (*(ret + i) == (unsigned char)c)
-			return (ret + i);
-		i++;
-	}
-	return (NULL);
+	if (dest && str)
+		ft_putendl_fd(ft_strjoin(dest, str), fd);
+	else if (!str)
+		ft_putendl_fd(ft_strjoin(dest, "No string passed"), fd);
 }

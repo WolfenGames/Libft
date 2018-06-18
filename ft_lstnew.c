@@ -6,7 +6,7 @@
 /*   By: jwolf <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:56:08 by jwolf             #+#    #+#             */
-/*   Updated: 2018/06/17 23:21:47 by jwolf            ###   ########.fr       */
+/*   Updated: 2018/06/04 10:58:01 by jwolf            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 t_list	*ft_lstnew(const void *content, size_t content_size)
 {
 	t_list	*ret;
+	size_t	i;
 
-	MALLCHECK_N((ret = malloc(sizeof(t_list))));
+	i = 0;
+	MALLCHECK_N((ret = (t_list *)malloc(sizeof(t_list))));
 	if (content)
 	{
-		ret->content = malloc(content_size);
+		ret->content = (void *)ft_memalloc(content_size);
 		if (ret->content)
 			ft_memmove(ret->content, content, content_size);
 		ret->content_size = content_size;

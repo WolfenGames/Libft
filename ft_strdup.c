@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	f = ft_strlen((char *)s1);
 	i = 0;
-	MALLCHECK_N((ret = ft_memalloc(sizeof(char) * (f + 1))));
+	MALLCHECK_N((ret = (char *)ft_memalloc(sizeof(char) * (f + 1))));
 	while (i < f)
 	{
 		ret[i] = s1[i];
