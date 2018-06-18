@@ -42,18 +42,20 @@ C = gcc
 
 $(NAME): $(OBJECTS)
 	@echo "\033[1;35;m[Linking]\033[0m: " | tr -d '\n'
-	ar r $(NAME) $(OBJECTS)
-	@echo "\033[1;32;m[Success] \t\t\t\033[0m" 
-	ranlib $(NAME)
+	@ar r $(NAME) $(OBJECTS)
+	@echo "\033[1;32;m[Success] \t\t\t\033[0m"  
+	@ranlib $(NAME)
 	@echo "\033[1;34;m[RUNUNG RANLIB] \t\t\033[0m"
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJECTS)
+	@echo "\033[1;36;m[Cleaning]\033[0m"
+	@rm -rf $(OBJECTS)
 
 fclean: clean
-	rm -rf $(NAME)
+	@echo "\033[1;30;m[Full clean]\033[0m"
+	@rm -rf $(NAME)
 
 re: fclean all
 
