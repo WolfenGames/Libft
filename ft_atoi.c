@@ -23,6 +23,19 @@ static int		ft_setreturn(int num, size_t b, t_bool neg)
 	return (num);
 }
 
+static size_t	ft_calculate(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	if ((str[i - 1] && str[i - 1] == '0') && (str[i] == '-' || str[i] == '+'))
+		return (0);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] == '0')
+		i++;
+}
+
 int				ft_atoi(const char *str)
 {
 	size_t	i;
@@ -38,10 +51,7 @@ int				ft_atoi(const char *str)
 			|| str[i] == '\n' || str[i] == '\f' || str[i] == '0')
 		i++;
 	neg = (str[i] == '-') ? TRUE : FALSE;
-	if ((str[i - 1] && str[i - 1] == '0') && (str[i] == '-' || str[i] == '+'))
-		return (0);
-	if (str[i] == '-' || str[i] == '+')
-		i++;
+	i = ft_calculate(str);
 	while (ft_isdigit(str[i]))
 	{
 		b++;
