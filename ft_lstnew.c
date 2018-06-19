@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(const void *content, size_t content_size)
 {
 	t_list	*ret;
-	
+
 	MALLCHECK_N((ret = (t_list *)malloc(sizeof(t_list))));
 	if (content)
 	{
